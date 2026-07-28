@@ -165,7 +165,7 @@ function Logo() {
   return (
     <div className="brand">
       <span className="brand-mark" aria-hidden="true"><i /></span>
-      <span>RareSignal</span>
+      <span>Rare</span>
     </div>
   );
 }
@@ -279,13 +279,13 @@ export default function Home() {
       heart_rate_bpm: { minimum: heartRateMin, maximum: heartRateMax },
       device_calibration: `${device} / ${selectedDevice.calibration}`,
       artifact_mix_percent: artifacts,
-      note: "Illustrative RareSignal demo package",
+      note: "Illustrative Rare demo package",
     };
     const blob = new Blob([JSON.stringify(manifest, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
-    anchor.download = "raresignal-demo-manifest.json";
+    anchor.download = "rare-demo-manifest.json";
     anchor.click();
     URL.revokeObjectURL(url);
     setExported(true);
@@ -333,7 +333,7 @@ export default function Home() {
               <div>
                 <p className="eyebrow">DEVICE REFERENCE COHORT</p>
                 <h1>Your signal. Your hardware. Calibrated.</h1>
-                <p>RareSignal uses a small representative cohort to learn device response, filtering, morphology, and artifact behavior.</p>
+                <p>Rare uses a small representative cohort to learn device response, filtering, morphology, and artifact behavior.</p>
               </div>
               <span className="status-pill"><i /> Calibration ready</span>
             </div>
@@ -527,7 +527,7 @@ export default function Home() {
                 <div className="benchmark-value"><span>72.4%</span><b>→</b><strong>86.6%</strong></div>
                 <div className="benchmark-bars">
                   <div><span>Real data only</span><i><b style={{ width: "72.4%" }} /></i></div>
-                  <div className="synthetic"><span>Real + RareSignal</span><i><b style={{ width: "86.6%" }} /></i></div>
+                  <div className="synthetic"><span>Real + Rare</span><i><b style={{ width: "86.6%" }} /></i></div>
                 </div>
                 <div className="benchmark-footer"><span>+14.2 percentage points</span><small>False-positive rate held constant</small></div>
               </article>
@@ -585,7 +585,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <span>RareSignal · Synthetic physiological data infrastructure</span>
+        <span>Rare · Synthetic physiological data infrastructure</span>
         <span>For training, robustness testing, and preclinical validation</span>
       </footer>
 

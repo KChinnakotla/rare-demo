@@ -11,17 +11,17 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: new URL(origin),
-    title: "RareSignal — Validated synthetic ECG datasets",
+    title: "Rare — Validated synthetic ECG datasets",
     description:
       "Generate device-matched rare-event ECG datasets with clinical, statistical, privacy, and downstream model validation.",
     openGraph: {
-      title: "RareSignal — Validated synthetic ECG datasets",
+      title: "Rare — Validated synthetic ECG datasets",
       description: "Configure, generate, and validate device-matched rare-event ECG datasets.",
-      images: [{ url: imageUrl, width: 1746, height: 909, alt: "RareSignal validated synthetic ECG datasets" }],
+      images: [{ url: imageUrl, width: 1746, height: 909, alt: "Rare validated synthetic ECG datasets" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "RareSignal — Validated synthetic ECG datasets",
+      title: "Rare — Validated synthetic ECG datasets",
       description: "Configure, generate, and validate device-matched rare-event ECG datasets.",
       images: [imageUrl],
     },

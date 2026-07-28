@@ -1,6 +1,6 @@
-# RareSignal YC Demo
+# Rare YC Demo
 
-An interactive product demo for RareSignal, a platform that generates validated,
+An interactive product demo for Rare, a platform that generates validated,
 device-matched synthetic physiological-signal datasets for medical-device teams.
 
 The demo follows one focused ECG workflow:

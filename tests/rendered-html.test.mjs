@@ -22,13 +22,13 @@ async function render() {
   );
 }
 
-test("server-renders the RareSignal dataset workflow", async () => {
+test("server-renders the Rare dataset workflow", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>RareSignal/);
+  assert.match(html, /<title>Rare —/);
   assert.match(html, /Generate the edge cases your model is missing/);
   assert.match(html, /Ventricular tachycardia/);
   assert.match(html, /aria-label="Number of recordings"/);

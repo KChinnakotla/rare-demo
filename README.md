@@ -6,7 +6,8 @@ device-matched synthetic physiological-signal datasets for medical-device teams.
 The demo follows one focused ECG workflow:
 
 1. Review a preloaded cardiac-patch reference cohort.
-2. Define a 20,000-recording ventricular-tachycardia dataset.
+2. Configure the ECG event, device, cohort size, duration, heart-rate bounds,
+   and artifact mix.
 3. Run a simulated generation and validation pipeline.
 4. Review waveform previews, validation evidence, and an illustrative benchmark.
 5. Export the validated dataset package.

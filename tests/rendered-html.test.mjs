@@ -31,7 +31,8 @@ test("server-renders the RareSignal dataset workflow", async () => {
   assert.match(html, /<title>RareSignal/);
   assert.match(html, /Generate the edge cases your model is missing/);
   assert.match(html, /Ventricular tachycardia/);
-  assert.match(html, /Generate validated dataset/);
+  assert.match(html, /aria-label="Number of recordings"/);
+  assert.match(html, /Field stress/);
   assert.match(html, /ILLUSTRATIVE DEMO/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });

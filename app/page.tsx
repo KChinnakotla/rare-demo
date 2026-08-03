@@ -70,7 +70,7 @@ function Waveform({
       ctx.setTransform(scale, 0, 0, scale, 0, 0);
       ctx.clearRect(0, 0, width, height);
 
-      ctx.strokeStyle = "rgba(181, 210, 202, 0.10)";
+      ctx.strokeStyle = "rgba(196, 178, 225, 0.10)";
       ctx.lineWidth = 1;
       for (let x = 0; x < width; x += 24) {
         ctx.beginPath();
@@ -85,10 +85,10 @@ function Waveform({
         ctx.stroke();
       }
 
-      ctx.strokeStyle = "#65dfbd";
+      ctx.strokeStyle = "#a875ff";
       ctx.lineWidth = 2;
       ctx.lineJoin = "round";
-      ctx.shadowColor = "rgba(101, 223, 189, 0.32)";
+      ctx.shadowColor = "rgba(168, 117, 255, 0.36)";
       ctx.shadowBlur = 8;
       ctx.beginPath();
 
@@ -298,7 +298,7 @@ export default function Home() {
         <Logo />
         <div className="topbar-right">
           <span className="demo-chip">ILLUSTRATIVE DEMO</span>
-          <span className="workspace-name">Ventura Cardiac · R&amp;D</span>
+          <span className="workspace-name">Ventura Cardiac Â· R&amp;D</span>
           <span className="avatar">VC</span>
         </div>
       </header>
@@ -320,7 +320,7 @@ export default function Home() {
               if (index === 3 && stepIndex >= 3) setView("export");
             }}
           >
-            <span className="step-number">{index < stepIndex ? "✓" : step[0]}</span>
+            <span className="step-number">{index < stepIndex ? "âœ“" : step[0]}</span>
             <span><strong>{step[1]}</strong><small>{step[2]}</small></span>
           </button>
         ))}
@@ -340,9 +340,9 @@ export default function Home() {
 
             <div className="reference-grid">
               <article className="reference-wave panel">
-                <div className="panel-kicker"><span>LIVE SIGNAL PREVIEW</span><span>10 mm/mV · 25 mm/s</span></div>
+                <div className="panel-kicker"><span>LIVE SIGNAL PREVIEW</span><span>10 mm/mV Â· 25 mm/s</span></div>
                 <Waveform kind="clean" animated />
-                <div className="signal-footer"><span>Lead I</span><span>250 Hz</span><span>Bandpass 0.5–40 Hz</span></div>
+                <div className="signal-footer"><span>Lead I</span><span>250 Hz</span><span>Bandpass 0.5â€“40 Hz</span></div>
               </article>
               <article className="panel cohort-panel">
                 <div className="panel-kicker"><span>COHORT RS-CAL-042</span><span className="verified">VERIFIED</span></div>
@@ -353,12 +353,12 @@ export default function Home() {
                   <div><strong>1</strong><span>ECG lead</span></div>
                   <div><strong>250</strong><span>Sampling rate, Hz</span></div>
                 </div>
-                <div className="device-row"><span className="device-icon">⌁</span><span><small>DEVICE PROFILE</small><strong>Ventura adhesive cardiac patch</strong></span></div>
+                <div className="device-row"><span className="device-icon">âŒ</span><span><small>DEVICE PROFILE</small><strong>Ventura adhesive cardiac patch</strong></span></div>
               </article>
             </div>
 
             <div className="actions">
-              <button className="secondary-button" onClick={() => setView("specification")}>Continue to dataset request <span>→</span></button>
+              <button className="secondary-button" onClick={() => setView("specification")}>Continue to dataset request <span>â†’</span></button>
             </div>
           </div>
         )}
@@ -367,12 +367,12 @@ export default function Home() {
           <div className="spec-view enter">
             <div className="section-heading compact">
               <div>
-                <p className="eyebrow">NEW DATASET · {datasetCode}</p>
+                <p className="eyebrow">NEW DATASET Â· {datasetCode}</p>
                 <h1>Generate the edge cases your model is missing.</h1>
                 <p>Define a clinically constrained dataset matched to your device.</p>
               </div>
               <button className="reference-summary" onClick={() => setView("reference")}>
-                <span className="mini-wave">⌁⌁⌁</span>
+                <span className="mini-wave">âŒâŒâŒ</span>
                 <span><small>CALIBRATED TO</small><strong>{device}</strong></span>
                 <span className="ready-dot" />
               </button>
@@ -459,8 +459,8 @@ export default function Home() {
             </div>
 
             <div className="generation-bar">
-              <div className="generation-note"><span className="shield">✓</span><span><strong>Validation suite included</strong><small>Clinical · Statistical · Privacy · Downstream utility</small></span></div>
-              <div className="generation-summary"><span><small>OUTPUT</small><strong>{patientHours.toFixed(1)} patient-hours</strong></span><button onClick={() => setView("processing")}>Generate {recordings.toLocaleString()} recordings <b>→</b></button></div>
+              <div className="generation-note"><span className="shield">âœ“</span><span><strong>Validation suite included</strong><small>Clinical Â· Statistical Â· Privacy Â· Downstream utility</small></span></div>
+              <div className="generation-summary"><span><small>OUTPUT</small><strong>{patientHours.toFixed(1)} patient-hours</strong></span><button onClick={() => setView("processing")}>Generate {recordings.toLocaleString()} recordings <b>â†’</b></button></div>
             </div>
           </div>
         )}
@@ -476,7 +476,7 @@ export default function Home() {
             <div className="pipeline-list">
               {pipelineSteps.map((step, index) => (
                 <div key={step} className={`pipeline-step ${index < pipelineIndex ? "done" : ""} ${index === pipelineIndex ? "running" : ""}`}>
-                  <span>{index < pipelineIndex ? "✓" : String(index + 1).padStart(2, "0")}</span>
+                  <span>{index < pipelineIndex ? "âœ“" : String(index + 1).padStart(2, "0")}</span>
                   <strong>{step}</strong>
                   <em>{index < pipelineIndex ? "Complete" : index === pipelineIndex ? "Running" : "Queued"}</em>
                 </div>
@@ -491,7 +491,7 @@ export default function Home() {
           <div className="results-view enter">
             <div className="results-header">
               <div>
-                <p className="eyebrow">VALIDATION COMPLETE · {datasetCode}</p>
+                <p className="eyebrow">VALIDATION COMPLETE Â· {datasetCode}</p>
                 <h1>{recordings.toLocaleString()} recordings. Ready to use.</h1>
                 <p>Synthetic {selectedEvent.short} data matched to the {device} and validated against untouched real recordings.</p>
               </div>
@@ -509,12 +509,12 @@ export default function Home() {
               <article className="panel previews-panel">
                 <div className="panel-kicker"><span>STRATIFIED WAVEFORM PREVIEW</span><span>3 OF {recordings.toLocaleString()}</span></div>
                 {[
-                  [`${selectedEvent.short} · clean`, `HR ${averageHeartRate} bpm`, "SQI 0.98", "clean" as WaveformKind],
-                  [`${selectedEvent.short} · moderate motion`, `HR ${Math.max(25, averageHeartRate - 8)} bpm`, "SQI 0.82", "motion" as WaveformKind],
-                  [`${selectedEvent.short} · electrode degradation`, `HR ${Math.min(250, averageHeartRate + 7)} bpm`, "SQI 0.74", "contact" as WaveformKind],
+                  [`${selectedEvent.short} Â· clean`, `HR ${averageHeartRate} bpm`, "SQI 0.98", "clean" as WaveformKind],
+                  [`${selectedEvent.short} Â· moderate motion`, `HR ${Math.max(25, averageHeartRate - 8)} bpm`, "SQI 0.82", "motion" as WaveformKind],
+                  [`${selectedEvent.short} Â· electrode degradation`, `HR ${Math.min(250, averageHeartRate + 7)} bpm`, "SQI 0.74", "contact" as WaveformKind],
                 ].map((wave) => (
                   <div className="preview-row" key={wave[0]}>
-                    <div><strong>{wave[0]}</strong><span>{wave[1]} · {wave[2]}</span></div>
+                    <div><strong>{wave[0]}</strong><span>{wave[1]} Â· {wave[2]}</span></div>
                     <Waveform kind={wave[3]} event={eventKey} heartRate={averageHeartRate} />
                     <span className="calibrated-tag">DEVICE MATCHED</span>
                   </div>
@@ -524,7 +524,7 @@ export default function Home() {
               <article className="panel benchmark-panel">
                 <div className="panel-kicker"><span>HELD-OUT MODEL BENCHMARK</span><span className="illustrative">ILLUSTRATIVE</span></div>
                 <p>Rare-event sensitivity on untouched real-patient data</p>
-                <div className="benchmark-value"><span>72.4%</span><b>→</b><strong>86.6%</strong></div>
+                <div className="benchmark-value"><span>72.4%</span><b>â†’</b><strong>86.6%</strong></div>
                 <div className="benchmark-bars">
                   <div><span>Real data only</span><i><b style={{ width: "72.4%" }} /></i></div>
                   <div className="synthetic"><span>Real + Rare</span><i><b style={{ width: "86.6%" }} /></i></div>
@@ -534,8 +534,8 @@ export default function Home() {
             </div>
 
             <div className="result-actions">
-              <span>Illustrative demo values · Not clinical claims</span>
-              <button onClick={() => setView("export")}>Review export package <b>→</b></button>
+              <span>Illustrative demo values Â· Not clinical claims</span>
+              <button onClick={() => setView("export")}>Review export package <b>â†’</b></button>
             </div>
           </div>
         )}
@@ -545,9 +545,9 @@ export default function Home() {
             <div className="export-heading">
               <div className="package-icon">RS</div>
               <div>
-                <p className="eyebrow">DATASET PACKAGE · {datasetCode}</p>
+                <p className="eyebrow">DATASET PACKAGE Â· {datasetCode}</p>
                 <h1>Evidence included.</h1>
-                <p>Usable waveforms, precise labels, complete lineage, and validation—not just generated signal images.</p>
+                <p>Usable waveforms, precise labels, complete lineage, and validationâ€”not just generated signal images.</p>
               </div>
               <div className="package-size"><small>PACKAGE SIZE</small><strong>{packageSize.toFixed(1)} GB</strong><span>{recordings.toLocaleString()} recordings</span></div>
             </div>
@@ -557,7 +557,7 @@ export default function Home() {
                 <div className="panel-kicker"><span>PACKAGE CONTENTS</span><span>7 ITEMS</span></div>
                 {exportPackageItems.map((item) => (
                   <div className="package-row" key={item[0]}>
-                    <span className="file-check">✓</span>
+                    <span className="file-check">âœ“</span>
                     <span><strong>{item[0]}</strong><small>{item[1]}</small></span>
                     <em>{item[2]}</em>
                   </div>
@@ -574,22 +574,22 @@ export default function Home() {
                     <div><dt>Validation cohort</dt><dd>HELDOUT-VENTURA-03</dd></div>
                   </dl>
                 </article>
-                <button className="download-button" onClick={exportManifest}><span>Export validated dataset</span><b>↓</b></button>
+                <button className="download-button" onClick={exportManifest}><span>Export validated dataset</span><b>â†“</b></button>
                 <small className="export-disclaimer">Demo downloads a representative manifest. Production exports include the full encrypted dataset package.</small>
               </aside>
             </div>
 
-            <button className="restart-link" onClick={() => setView("specification")}>↻ Run demo again</button>
+            <button className="restart-link" onClick={() => setView("specification")}>â†» Run demo again</button>
           </div>
         )}
       </section>
 
       <footer>
-        <span>Rare · Synthetic physiological data infrastructure</span>
+        <span>Rare Â· Synthetic physiological data infrastructure</span>
         <span>For training, robustness testing, and preclinical validation</span>
       </footer>
 
-      {exported && <div className="toast"><span>✓</span> Demo manifest exported</div>}
+      {exported && <div className="toast"><span>âœ“</span> Demo manifest exported</div>}
     </main>
   );
 }
